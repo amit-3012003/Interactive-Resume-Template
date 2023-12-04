@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Share+Tech|Share+Tech+Mono" rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Share Tech Mono', monospace;
+            background: url('background-image.jpg') center/cover no-repeat;
+            margin: 0;
+            padding: 0;
+            color: #fff;
+        }
+
+        #content {
+            max-width: 800px;
+            margin: 50px auto;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        h1, h2, span {
+            margin: 0;
+        }
+
+        h1 {
+            font-size: 2em;
+            text-align: center;
+        }
+
+        .photo {
+            text-align: center;
+        }
+
+        .photo img {
+            width: 150px; /* Adjust the width as needed */
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            position: relative;
+            margin-top: 20px;
+            padding-left: 20px;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+
+        .hex {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 15px;
+            height: 15px;
+            background-color: #3498db;
+            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+            transition: transform 0.3s;
+        }
+
+        .hex.moved {
+            transform: translate(-10px, -50%);
+        }
+
+        .subtext {
+            display: none;
+            margin-top: 10px;
+        }
+
+        .coll {
+            list-style: none;
+            padding: 0;
+        }
+
+        .coll li {
+            margin-bottom: 5px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #fff;
+            text-align: left;
+        }
+
+        th, td {
+            padding: 8px;
+        }
+    </style>
+    <title>Designs by Laighlin</title>
+</head>
+
+<body onload="draw()">
+    <main id="content">
+        <div class="photo">
+            <img src="https://images.unsplash.com/photo-1608485439523-25b28d982428?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cGFzc3BvcnQlMjBwaG90b3xlbnwwfHwwfHx8MA%3D%3D" alt="Amit Prabhu Photo">
+        </div>
+        <h1>About Amit Prabhu</h1>
+        <h2 id="careerObjectiveToggle">
+            <div class="hex moved"></div><span>Career Objective</span></h2>
+        <div class="subtext" id="careerObjective">
+            <p>I am a dedicated and passionate individual aspiring to excel in the IT industry. My goal is to contribute
+                my skills and knowledge to innovative projects and collaborate with like-minded professionals to
+                achieve success.</p>
+        </div>
+        <h2 id="educationToggle">
+            <div class="hex"></div><span>Education</span></h2>
+        <div class="subtext coll" id="education">
+            <table>
+                <tr>
+                    <th>Qualification</th>
+                    <th>School/College</th>
+                    <th>Percentage/CGPA</th>
+                </tr>
+                <tr>
+                    <td>10th</td>
+                    <td>Model English School</td>
+                    <td>86.20%</td>
+                </tr>
+                <tr>
+                    <td>12th</td>
+                    <td>Holy Angels School</td>
+                    <td>83.54%</td>
+                </tr>
+                <tr>
+                    <td>BE in Electronic and Communication</td>
+                    <td>BMS Institute of Technology</td>
+                    <td>8.2 CGPA</td>
+                </tr>
+            </table>
+        </div>
+        <h2 id="skillsToggle">
+            <div class="hex"></div><span>Skills</span></h2>
+        <div class="subtext coll" id="skills">
+            <p>A good grasp of object-oriented programming and computing-related math as a whole.</p>
+            <p>Proficient in CSS3 and HTML5; making significant inroads into JavaScript and JQuery.</p>
+            <p>Adobe Illustrator is both enjoyable for me and putty in my hands. <i>Putty.</i></p>
+            <p>In addition to my knowledge of coding, I also speak five human languages and am in the process of
+                learning a few more.</p>
+        </div>
+        <h2 id="hobbiesToggle">
+            <div class="hex"></div><span>Hobbies & Interests</span></h2>
+        <div class="subtext coll" id="hobbies">
+            <p>Small indie coding projects (semi-professionally).</p>
+            <p>Music (unprofessionally).</p>
+            <p>Massively multiplayer online games (clumsily).</p>
+            <p>Cooking (hungrily).</p>
+        </div>
+        <h2 id="currentlyWorkingOnToggle">
+            <div class="hex"></div><span>Currently Working On</span></h2>
+        <div class="subtext coll" id="currentlyWorkingOn">
+            <p>An accessibility app for Android.</p>
+            <p>A couple of desktop themes for a blogging platform I casually use.</p>
+            <p>A photography project detailing the interplay of natural and artificial in urban environments.</p>
+        </div>
+        <h2 id="findMeToggle">
+            <div class="hex"></div><span>Find Me</span></h2>
+        <div class="subtext coll" id="findMe">
+            <a href="#">Twitter</a> | <a href="#">Tumblr</a> | <a href="#">Codepen</a> | <a href="#">Behance</a>
+        </div>
+        <h2 id="contactMeToggle">
+            <div class="hex"></div><span>Contact Me</span></h2>
+        <div class="subtext coll" id="contactMe">
+            <ul>
+                <li>Phone: +12 345 678 90</li>
+                <li>E-mail: <a href="mailto:amitprabhu301@gmail.com">amitprabhu301@gmail.com</a></li>
+            </ul>
+        </div>
+        <h2 id="awardsToggle">
+            <div class="hex"></div><span>Awards & Achievements</span></h2>
+        <div class="subtext coll" id="awards">
+            <p>Outstanding Achievement in Coding (Year)</p>
+            <p>Best Design Portfolio (Year)</p>
+            <p>Excellence in Team Collaboration (Year)</p>
+        </div>
+    </main>
+    <svg viewBox="0 0 500 150" preserveAspectRatio="none" class="wave" id="one">
+        <path d="M-13.36,88.98 C168.85,182.73 276.72,-73.84 506.31,79.10 L500.00,150.00 L0.00,150.00 Z"></path>
+    </svg>
+    <svg viewBox="0 0 500 150" preserveAspectRatio="none" class="wave" id="two">
+        <path d="M-13.36,88.98 C168.85,182.73 276.72,-73.84 506.31,79.10 L500.00,150.00 L0.00,150.00 Z"></path>
+    </svg>
+    <div id="hex-holder">
+        <div class="hex" id="uno"></div>
+        <div class="hex" id="dos"></div>
+        <div class="hex" id="tres"></div>
+    </div>
+
+    <script>
+        function draw() {
+            var canvas = document.getElementById('bg');
+            if (canvas.getContext) {
+                var ctx = canvas.getContext('2d');
+                ctx.fillStyle = 'rgb(200, 0, 0)';
+                ctx.fillRect(10, 10, 50, 50);
+                ctx.fillStyle = 'rgba(0, 0, 200, 0.5)';
+                ctx.fillRect(30, 30, 50, 50);
+            }
+        }
+
+        $(document).ready(function () {
+            $('#content').animate({
+                opacity: 1,
+                marginTop: '0',
+            }, 800);
+
+            $('h2').click(function () {
+                if ($(this).attr('id') === 'educationToggle') {
+                    $('#education').slideToggle('fast');
+                } else if ($(this).attr('id') === 'hobbiesToggle') {
+                    $('#hobbies').slideToggle('fast');
+                } else if ($(this).attr('id') === 'awardsToggle') {
+                    $('#awards').slideToggle('fast');
+                } else {
+                    $(this).next('.subtext').slideToggle('fast');
+                    $(this).find('.hex').toggleClass('moved');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
